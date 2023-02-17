@@ -10,7 +10,8 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState();
+  const [isConfirmationPopupOpen, setIsConfirmationPopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState({});
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
@@ -28,7 +29,7 @@ function App() {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
-    setSelectedCard();
+    setSelectedCard({});
   }
 
   function handleCardClick(card) {
@@ -58,12 +59,12 @@ function App() {
             <>
               <div className="popup__field">
                 <input className="popup__input" id="input-username" type="text" name="name" value="" placeholder="Имя"
-                  required minLength="2" maxLength="40" />
+                  required minLength="2" maxLength="40" readOnly />
                 <span className="input-username-error popup__error"></span>
               </div>
               <div className="popup__field">
                 <input className="popup__input" id="input-about" type="text" name="about" value="" placeholder="О себе" required
-                  minLength="2" maxLength="200" />
+                  minLength="2" maxLength="200" readOnly />
                 <span className="input-about-error popup__error"></span>
               </div>
               <button type="submit" className="popup__button button button_opacity_save">Сохранить</button>
@@ -79,12 +80,12 @@ function App() {
             <>
               <div className="popup__field">
                 <input className="popup__input" id="input-name" type="text" name="name" value="" placeholder="Название" required
-                  minLength="2" maxLength="30" />
+                  minLength="2" maxLength="30" readOnly />
                 <span className="input-name-error popup__error"></span>
               </div>
               <div className="popup__field">
                 <input className="popup__input" id="input-link" type="url" name="link" value="" placeholder="Ссылка на картинку"
-                  required />
+                  required readOnly />
                 <span className="input-link-error popup__error"></span>
               </div>
               <button type="submit" className="popup__button button button_opacity_save">Создать</button>
@@ -100,24 +101,26 @@ function App() {
             <>
               <div className="popup__field">
                 <input className="popup__input" id="input-avatar" type="url" name="avatar" value="" placeholder="Ссылка на картинку"
-                  required />
+                  required readOnly />
                 <span className="input-avatar-error popup__error"></span>
               </div>
               <button type="submit" className="popup__button button button_opacity_save">Сохранить</button>
             </>
           }
         />
-        {/*        <PopupWithForm
+        <PopupWithForm
           isOpen={isConfirmationPopupOpen}
           onClose={closeAllPopups}
           name={'confirm'}
           title={'Вы уверены?'}
-          children={ 
+          children={
             <>
-            <button type="submit" className="popup__button popup__button_confirm button button_opacity_save">Да</button>
+              <button type="submit" className="popup__button popup__button_confirm button button_opacity_save">Да</button>
             </>
           }
-        /> */}
+        />
+
+
 
       </div>
 
