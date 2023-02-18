@@ -8,6 +8,7 @@ function PopupWithForm(props) {
           <button className="popup__close-button button button_opacity_page" type="button" onClick={props.onClose}></button>
           <h3 className="popup__title">{props.title}</h3>
           {props.children}
+          <button type="submit" className="popup__button button button_opacity_save">{props.buttonName}</button>
         </form>
       </div>
     </div>

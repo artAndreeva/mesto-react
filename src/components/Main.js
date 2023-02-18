@@ -39,9 +39,9 @@ function Main(props) {
 
       <section className="gallery" aria-label="Галерея пользователя">
         <ul className="gallery__list">
-          {cards.map((card) =>
+          {cards.map((card) => (
             <Card key={card._id} card={card} onCardClick={props.onCardClick} />
-          )}
+          ))}
         </ul>
       </section>
 
