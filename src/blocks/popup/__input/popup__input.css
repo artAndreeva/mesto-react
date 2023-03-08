@@ -13,6 +13,10 @@
   margin: 0;
 }
 
+/* .popup__input:invalid {
+  border-bottom-color: rgb(255, 0, 0);
+}
+ */
 @media screen and (max-width: 768px) {
   .popup__input {
     width: 238px;

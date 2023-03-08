@@ -55,6 +55,14 @@ class Api {
     })
   }
 
+  changeLikeCardStatus(id, status) {
+    if (status) {
+      return this.likeCard(id);
+    } else {
+      return this.unlikeCard(id);
+    }
+  }
+
   //Постановка лайка
   likeCard(id) {
     return this._request(`${this._baseUrl}/cards/${id}/likes`, {
